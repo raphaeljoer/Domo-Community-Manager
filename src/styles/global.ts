@@ -15,12 +15,23 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, input , button {
-    font-family: 'Roboto Slab', serif;
+  body, input {
+    font-family: 'Ubuntu', sans-serif;
     font-size:16px;
   }
 
-  h1,h2,h3,h4,h5,h6, strong {
+  button {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
   }
 

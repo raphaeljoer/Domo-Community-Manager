@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-import signInBackgroundImg from '../../assets/sign-in-background.png';
+import signInBackgroundImg from '../../assets/bg-signin.jpg';
 
 export const Container = styled.div`
   display: flex;
@@ -45,14 +45,14 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
 
-    color: #ff9000;
+    color: #e2f434;
     display: block;
     margin-top: 24px;
     text-decoration: none;
     transition: color 0.2s;
 
     &:hover {
-      color: ${shade(0.3, '#ff9000')};
+      color: ${shade(0.3, '#E2F434')};
     }
 
     svg {
