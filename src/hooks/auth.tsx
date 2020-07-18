@@ -1,9 +1,17 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
 import api from '../services/api';
+import { useToast } from './toast';
+
+interface User {
+  id: string;
+  avatar_url: string;
+  name: string;
+  email: string;
+}
 
 interface AuthData {
   token: string;
-  user: object;
+  user: User;
 }
 
 interface SignInCredentials {
@@ -12,7 +20,7 @@ interface SignInCredentials {
 }
 
 interface AuthContextData {
-  user: object;
+  user: User;
   signIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
 }
@@ -20,9 +28,10 @@ interface AuthContextData {
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FC = ({ children }) => {
+  const { addToast } = useToast();
   const [authData, setAuthData] = useState<AuthData>(() => {
-    const token = localStorage.getItem('@GoBarber:token');
-    const user = localStorage.getItem('@GoBarber:user');
+    const token = localStorage.getItem('@Domo:token');
+    const user = localStorage.getItem('@Domo:user');
 
     if (token && user) {
       return { token, user: JSON.parse(user) };
@@ -31,23 +40,35 @@ const AuthProvider: React.FC = ({ children }) => {
     return {} as AuthData;
   });
 
-  const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post('/sessions', {
-      email,
-      password,
-    });
+  const signIn = useCallback(
+    async ({ email, password }) => {
+      const response = await api.post('/auth/sign_in', {
+        email,
+        password,
+      });
 
-    const { token, user } = response.data;
+      const user = response.data.data;
+      const token = response.headers['access-token'];
 
-    localStorage.setItem('@GoBarber:token', token);
-    localStorage.setItem('@GoBarber:user', JSON.stringify(user));
+      if (!token || !user) {
+        addToast({
+          type: 'error',
+          title: 'Erro na autenticação',
+          description: 'Ocorreu um erro ao fazer login, cheque as credênciais.',
+        });
+      }
 
-    setAuthData({ token, user });
-  }, []);
+      localStorage.setItem('@Domo:token', token);
+      localStorage.setItem('@Domo:user', JSON.stringify(user));
+
+      setAuthData({ token, user });
+    },
+    [addToast],
+  );
 
   const signOut = useCallback(() => {
-    localStorage.removeItem('@GoBarber:token');
-    localStorage.removeItem('@GoBarber:token');
+    localStorage.removeItem('@Domo:token');
+    localStorage.removeItem('@Domo:token');
 
     setAuthData({} as AuthData);
   }, []);

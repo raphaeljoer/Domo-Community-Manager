@@ -1,0 +1,93 @@
+{
+  "users": [
+    {
+      "id": "e4567-e89b-12d3-a456",
+      "avatar": "https://avatars1.githubusercontent.com/u/20464128?s=460&u=e9e5701646f68e7fdf4b4ab9379748ed85e33a36&v=4",
+      "name": "Raphael Joer",
+      "email": "ra.joer@gmail.com",
+      "role": "Community Manager"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "123e4567-e89b-12d3-a456-243523452521234345",
+      "value": 2400,
+      "available": true,
+      "expires_in_days": 20,
+      "expires_on": "01/01/2021",
+      "created_at": "01/01/2019",
+      "updated_at": "01/01/2020",
+      "client": {
+        "id":"5633frew4563-e89b-12d3-a456-24352345252345",
+        "company":"Espaço Z",
+        "accountable_name":"Carol Miranda",
+        "phone":"(85) 98802-3938",
+        "email":"carol@espacoz.com"
+      }
+    },
+    {
+      "id": "ger45234555tg65-e89b-12d3-a456-2434444dd245",
+      "value": 1800,
+      "available": true,
+      "expires_in_days": 20,
+      "expires_on": "01/01/2021",
+      "created_at": "01/01/2019",
+      "updated_at": "01/01/2020",
+      "client": {
+        "id":"5634563-e89b-12d3-a456-24352345252345",
+        "company":"Espaço Z",
+        "accountable_name":"Luiz Gervazio",
+        "phone":"(85) 9999-6453",
+        "email":"luiz@company.com"
+      }
+    },
+    {
+      "id": "123e4567-e8qwerqwera456-24352345252345",
+      "value": 3600,
+      "available": true,
+      "expires_in_days": 20,
+      "expires_on": "01/01/2021",
+      "created_at": "01/01/2019",
+      "updated_at": "01/01/2020",
+      "client": {
+        "id":"5634563-e8234522346g-2356-52345252345",
+        "company":"Espaço Z",
+        "accountable_name":"Carol Miranda",
+        "phone":"(85) 98802-3938",
+        "email":"carol.miranda@espacoz.com"
+      }
+    }
+  ],
+  "cupons": [
+    {
+      "id": "123e4567-e89b-12d3-a456-23256878680624f",
+      "title": "#ELEPHANT20",
+      "used": 12,
+      "discount_value": 20,
+      "available": true,
+      "expires_on": "10/10/2020",
+      "created_at": "01/01/2019",
+      "updated_at": "01/01/2020"
+    },
+    {
+      "id": "123e4567-e89b-12d3-a456-982459209490426",
+      "title": "#ELEFRIDAY",
+      "used": 12,
+      "discount_value": 20,
+      "available": true,
+      "expires_on": "10/10/2020",
+      "created_at": "01/01/2019",
+      "updated_at": "01/01/2020"
+    },
+    {
+      "id": "123e4567-e89b-12d3-a456-983426285633864",
+      "title": "#WOMANSDAY",
+      "used": 120,
+      "discount_value": 40,
+      "available": true,
+      "expires_on": "10/10/2020",
+      "created_at": "08/05/2019",
+      "updated_at": "01/01/2020"
+    }
+  ]
+}
